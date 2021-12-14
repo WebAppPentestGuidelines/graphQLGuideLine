@@ -1,0 +1,10 @@
+{
+    "rules": {
+        "preset-ja-technical-writing": true,
+        "prh": {
+            "rulePaths": [
+                "./node_modules/prh/prh-rules/media/WEB+DB_PRESS.yml"
+            ]
+        }
+    }
+}

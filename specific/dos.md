@@ -104,7 +104,7 @@ query{
 
 "GraphQL Voyager"[2] はGraphQLのSDLやIntrospectionを読み込むことで、データ構造の関係図を作成するツールです。解決先のデータ構図を矢印で示します。
 
-![Untitled](GraphQL%E3%81%AB%E3%82%88%E3%82%8BDoS%E6%94%BB%E6%92%83%202c68e61200474a45bf773fac4b0ee40f/Untitled.png)
+![Untitled](dos/figure1.png)
 
 図1.は、GraphQL Voyagerのライブデモのスキーマを用いて作成したものです。PersonはStarshipオブジェクトを持っており、クエリ内に含まれている場合はStarshipも同時に解決されます。しかし、StarshipはPersonオブジェクトを持っており、双方でデータ構造の解決にループが生じていることが確認できます。
 

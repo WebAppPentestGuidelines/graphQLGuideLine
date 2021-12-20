@@ -2,7 +2,7 @@
 
 ## GraphQL クライアント
 
-GraphQLに対応したクライアントを利用することで、対象のGraphQL構成の把握や調査に役立ちます。プロキシツールと併用することで手動の検査を行う際にも有用です。
+GraphQLに対応したクライアントを利用することで、対象のGraphQL構成の把握や調査に役立ちます。プロキシツールと併用することで手動での検査をする際にも有用です。
 
 - Altair
     - [https://altair.sirmuel.design/](https://altair.sirmuel.design/)
@@ -15,7 +15,7 @@ GraphQLに対応したクライアントを利用することで、対象のGrap
 
 ## プロキシツール
 
-Webアプリケーション一般のデバッグや脆弱性診断によく用いられる、HTTPレベルでの操作を行いやすくするためのツールです。
+Webアプリケーション一般のデバッグや脆弱性診断によく用いられる、HTTPレベルでの操作をしやすくするためのツールです。
 
 - Burp Suite
     - [https://portswigger.net/burp](https://portswigger.net/burp)

@@ -4,8 +4,8 @@
 
 [GraphQLの概要](AboutGraphQL.md)
 
-[GraphQLで起こりやすい問題](GraphQLで起こりやすい問題.md)
+[GraphQLで起こりやすい問題](specific.md)
 
-[GraphQL特有でない問題](GraphQL特有でない問題.md)
+[GraphQL特有でない問題](common.md)
 
 [Appendix](Appendix.md)

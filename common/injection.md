@@ -16,9 +16,9 @@ GraphQLで受け取った入力を渡す先の処理系には、たとえば下�
 
 このような処理系に、信頼できない入力を渡した場合、下記のような攻撃が成立し得ます。
 
+<!-- textlint-disable prh -->
 - OSコマンドインジェクション
 - SQL/NoSQLインジェクション
-<!-- textlint-disable prh -->
 - XXE(**X**ML E**x**ternal **E**ntity)
 <!-- textlint-enable prh -->
 

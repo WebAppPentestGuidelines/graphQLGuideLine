@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: >-
-          npm install -g textlint textlint-rule-prh
+          npm install textlint textlint-rule-prh
           textlint-rule-preset-ja-technical-writing
+          textlint-filter-rule-comments
       - run: npx textlint **/*.md

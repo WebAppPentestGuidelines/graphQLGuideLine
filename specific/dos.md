@@ -153,7 +153,7 @@ query{
 
 クエリの展開深度の最大値を指定することで再帰的解決によるDoS攻撃を防ぐことができます。
 
-たとえば、GraphQLライブラリの1つである "LightHouse" では max_query_depth を設定することでクエリのネストの深さを制限できます。しかし、GraphQLを使用するメリットはネストされたデータ構造を単一のリクエストで処理できることです。過度な深さの制限はGraphQLの利便性やユーザビリティを否定することになるため、制限を意識することのない範囲かつサーバが処理可能な適切な値を設定する必要があります。
+たとえば、GraphQLライブラリの1つである "LightHouse" では max_query_depth を設定することでクエリのネストの深さを制限できます。しかし、GraphQLを使用するメリットはネストされたデータ構造を単一のリクエストで処理できることです。過度な深さの制限はGraphQLの利便性を否定することになるため、制限を意識することのない範囲かつサーバが処理可能な適切な値を設定する必要があります。
 
 ライブラリを利用せずに実装している場合、クエリの深さの制限機能が実装されていない場合があります。クエリを実行する前にクエリの深さを検証し、許容値を超えた場合は処理を中断するように実装することを推奨します。
 
@@ -174,4 +174,5 @@ query{
 [1]. [https://spec.graphql.org/July2015/#sec-Fragment-spreads-must-not-form-cycles](https://spec.graphql.org/July2015/#sec-Fragment-spreads-must-not-form-cycles)
 
 [2]. [https://github.com/APIs-guru/graphql-voyager](https://github.com/APIs-guru/graphql-voyager)
+
 [3]. [https://docs.github.com/ja/graphql/overview/resource-limitations](https://docs.github.com/ja/graphql/overview/resource-limitations)

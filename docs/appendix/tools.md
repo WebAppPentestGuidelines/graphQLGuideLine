@@ -17,6 +17,7 @@ GraphQLに対応したクライアントを利用することで、対象のGrap
 
 Webアプリケーション一般のデバッグや脆弱性診断によく用いられる、HTTPレベルでの操作をしやすくするためのツールです。
 
+<!-- textlint-disable prh -->
 - Burp Suite
     - [https://portswigger.net/burp](https://portswigger.net/burp)
 - Fiddler
@@ -25,6 +26,7 @@ Webアプリケーション一般のデバッグや脆弱性診断によく用�
     - [https://www.zaproxy.org/](https://www.zaproxy.org/)
 - Packet Proxy
     - [https://github.com/DeNA/PacketProxy](https://github.com/DeNA/PacketProxy)
+<!-- textlint-enable prh -->
 
 ## 学習サイト/環境
 
@@ -57,7 +59,9 @@ Webアプリケーションの診断でよく用いられるBurpにおいて、G
 
 [https://github.com/swisskyrepo/GraphQLmap](https://github.com/swisskyrepo/GraphQLmap)
 
+<!-- textlint-disable prh -->
 - graphql-path-enum
+<!-- textlint-enable prh -->
 
 スキーマやタイプを特定するためのさまざまな方法をリストするツールです。
 

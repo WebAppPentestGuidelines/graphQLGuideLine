@@ -60,6 +60,6 @@ __schema {
 ## 対策
 
 Introspection Queryを無効化することを推奨します。  
-IntrospectionはAPI作成者がAPI情報を提供する目的で意図的に有効化している可能性もありますが、本番環境ではこの機能を有効とせずにドキュメントなど別の方法で情報を共有してください。
+IntrospectionはAPI作成者がAPI情報を提供する目的で意図的に有効化している可能性もありますが、本番環境ではこの機能を有効とせずにドキュメント等の別の方法で情報を共有してください。
 
 具体的な無効化の方法については各GraphQLライブラリによって異なるため、[ドキュメント](https://lab.wallarm.com/why-and-how-to-disable-introspection-query-for-graphql-apis/)を参照してください。

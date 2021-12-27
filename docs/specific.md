@@ -1,7 +1,7 @@
 # GraphQLで起こりやすい問題
-
-前述のような特徴を持ったGraphQLですが、その特徴ゆえに以下のような問題が起こりや少なくっています。
-
+<!-- textlint-disable prh -->
+前述のような特徴を持ったGraphQLですが、その特徴ゆえに以下のような問題が起こりやすくなくっています。
+<!-- textlint-enable prh -->
 - [Introspection Query](specific/introspection_query.md)
 - [GraphQLによるDoS攻撃](specific/dos.md)
 - [レースコンディション](specific/race_condition.md)

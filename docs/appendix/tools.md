@@ -55,7 +55,7 @@ Webアプリケーションの診断でよく用いられるBurpにおいて、G
 
 - GraphQLmap
 
-スキーマのダンプやファジングが可能な、侵入テストの目的でgraphqlエンドポイントと対話するためのスクリプトエンジンです。
+スキーマのダンプやファジングが可能な、侵入テストの目的でGraphqlエンドポイントと対話するためのスクリプトエンジンです。
 
 [https://github.com/swisskyrepo/GraphQLmap](https://github.com/swisskyrepo/GraphQLmap)
 

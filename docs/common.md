@@ -5,6 +5,6 @@ GraphQLを利用したアプリケーションでも、一般的な脆弱性が�
 - [インジェクション系の脆弱性について](common/injection.md)
 - [不適切なアクセス制御](common/access_control.md)
 - [危険なデフォルト設定の使用](common/default_setting.md)
-- [クロスサイトリクエストフォージェリ](cross_site_request_forgeries.mdd)
+- [クロスサイトリクエストフォージェリ](common/cross_site_request_forgeries.mdd)
 
 他にも、クロスサイトスクリプティングやサーバサイドリクエストフォージェリ等、Webアプリケーション一般に共通する脆弱性等があります。これらについては参考文献等を参考に検証・対策してください。

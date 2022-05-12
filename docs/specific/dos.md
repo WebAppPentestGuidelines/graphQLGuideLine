@@ -54,7 +54,7 @@ fragment teamFragment on Member {
 		teamId,
 		teamName,
 		memberList {
-			...memberFragment 
+			...memberFragment
 		}
 	}
 ```
@@ -102,11 +102,11 @@ query{
 
 データ構造をグラフ化することで、データどうしの関係を可視化し、解決がループしていないかを容易に探すことができます。
 
-"GraphQL Voyager"[2] はGraphQLのSDLやIntrospectionを読み込むことで、データ構造の関係図を作成するツールです。解決先のデータ構図を矢印で示します。
+"GraphQL Voyager"[2] はGraphQLのSDLやIntrospectionを読み込むことで、データ構造の関係図を作成するツールです。解決先のデータ構造を矢印で示します。
 
-![Untitled](dos/figure1.png)
+![図1.](dos/figure1.png)
 
-図1.は、GraphQL Voyagerのライブデモのスキーマを用いて作成したものです。PersonはStarshipオブジェクトを持っており、クエリ内に含まれている場合はStarshipも同時に解決されます。しかし、StarshipはPersonオブジェクトを持っており、双方でデータ構造の解決にループが生じていることが確認できます。
+図1.は、GraphQL Voyagerのライブデモのスキーマを用いて作成したものです。AuthorはBookオブジェクトを持っており、クエリ内に含まれている場合はBookも同時に解決されます。しかし、BookはAuthorオブジェクトを持っており、双方でデータ構造の解決にループが生じていることが確認できます。
 
 ### 解決をループさせるクエリの作成
 

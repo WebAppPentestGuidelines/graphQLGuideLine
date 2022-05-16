@@ -71,8 +71,8 @@ GraphQLサーバが受け取った入力をほかの処理系で利用する場�
 
 各インジェクション系の脆弱性の対策については、ここでの説明は省略します。各インジェクション系の脆弱性の対策について、より詳しい情報が必要であれば下記のようなページをご参照ください。
 
-- [OS Command Injection Prevention](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html) [- OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+- [OS Command Injection Defense - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html)
 - [SQL Injection Prevention - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
-- [NoSQL Injection](https://www.netsparker.com/blog/web-security/what-is-nosql-injection/) [- OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
-- [XXE Injection Prevention](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html) [- OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)
+- [What is NoSQL Injection and How Can You Prevent It? | Invicti](https://www.netsparker.com/blog/web-security/what-is-nosql-injection/)
+- [XXE Injection Prevention - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
     - [XML Security - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/XML_Security_Cheat_Sheet.html)

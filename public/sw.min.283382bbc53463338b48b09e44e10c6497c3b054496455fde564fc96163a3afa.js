@@ -1,1 +1,0 @@
-navigator.serviceWorker&&navigator.serviceWorker.register("/graphQLGuidelines/sw.js",{scope:"/graphQLGuidelines/"})

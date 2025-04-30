@@ -2,16 +2,16 @@
  GraphQLの概要
  &lt;a class="anchor" href="#graphql%e3%81%ae%e6%a6%82%e8%a6%81">#&lt;/a>
 &lt;/h1>
-&lt;h1 id="graphqlとは">
+&lt;h2 id="graphqlとは">
  GraphQLとは
  &lt;a class="anchor" href="#graphql%e3%81%a8%e3%81%af">#&lt;/a>
-&lt;/h1>
+&lt;/h2>
 &lt;p>GraphQLとはFacebookによって開発されたWeb APIの規格です。&lt;/p>
 &lt;p>RESTful APIにおける課題を解決する技術として注目されており、海外ではGitHub,Twitter等すでに多くのサービスで採用され、近年では国内でも採用するサービスが増えてきました。&lt;/p>
-&lt;h1 id="graphqlの例">
+&lt;h2 id="graphqlの例">
  GraphQLの例
  &lt;a class="anchor" href="#graphql%e3%81%ae%e4%be%8b">#&lt;/a>
-&lt;/h1>
+&lt;/h2>
 &lt;p>GraphQLはSQLのようなデータを問い合わせるための言語であり、以下2つの言語が存在します。&lt;/p>
 &lt;ul>
 &lt;li>クエリ： GraphQL API のリクエストを生成するための言語&lt;/li>

@@ -380,7 +380,7 @@ GraphQLの多くの実装では、デフォルトでIntrospectionが有効にな
 &lt;/h2>
 &lt;p>レースコンディションとは、複数のプロセスやスレッドから同一のリソースへ同時にアクセスした際に、予期せぬ処理結果が生じる問題です。&lt;/p>
 &lt;center>
-&lt;figure>&lt;img src="figure2.png"
+&lt;figure>&lt;img src="../figure2.png"
  alt="図2" width="60%">&lt;figcaption>
  &lt;p>図2&lt;/p>
  &lt;/figcaption>

@@ -4,7 +4,7 @@ languageCode = 'ja'
 title = 'GraphQL診断ガイドライン'
 enableGitInfo = true
 theme = 'hugo-book'
-googleAnalytics = ""
+googleAnalytics = 'G-FS0PCC272H'
 
 # (Optional) If you provide a Disqus shortname, comments will be enabled on
 # all pages.

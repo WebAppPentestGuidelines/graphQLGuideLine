@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GraphQLで起こりやすい問題 on GraphQL診断ガイドライン</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/specific/</link><description>Recent content in GraphQLで起こりやすい問題 on GraphQL診断ガイドライン</description><generator>Hugo</generator><language>ja</language><atom:link href="https://wg1.isog-j.org/graphQLGuideline/docs/specific/index.xml" rel="self" type="application/rss+xml"/><item><title>Introspection Query</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/specific/introspection_query/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/specific/introspection_query/</guid><description>&lt;h1 id="introspection-query">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GraphQLで起こりやすい問題 on GraphQL診断ガイドライン</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/</link><description>Recent content in GraphQLで起こりやすい問題 on GraphQL診断ガイドライン</description><generator>Hugo</generator><language>ja</language><atom:link href="https://wg1.isog-j.org/graphQLGuideLine/docs/specific/index.xml" rel="self" type="application/rss+xml"/><item><title>Introspection Query</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/introspection_query/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/introspection_query/</guid><description>&lt;h1 id="introspection-query">
  Introspection Query
  &lt;a class="anchor" href="#introspection-query">#&lt;/a>
 &lt;/h1>
@@ -55,7 +55,7 @@ GraphQLの多くの実装では、デフォルトでIntrospectionが有効にな
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上記クエリを送信し、正常にqueryTypeを含むレスポンスが返された場合、Introspection Queryが解釈されている可能性があります。このような情報からGraphQLシステムに存在する型の情報やQuery/Mutationの名前、それらを呼び出すのに必要な引数等の情報が取得できます。&lt;/p></description></item><item><title>GraphQLによるDoS攻撃</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/specific/dos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/specific/dos/</guid><description>&lt;h1 id="graphqlによるdos攻撃">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上記クエリを送信し、正常にqueryTypeを含むレスポンスが返された場合、Introspection Queryが解釈されている可能性があります。このような情報からGraphQLシステムに存在する型の情報やQuery/Mutationの名前、それらを呼び出すのに必要な引数等の情報が取得できます。&lt;/p></description></item><item><title>GraphQLによるDoS攻撃</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/dos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/dos/</guid><description>&lt;h1 id="graphqlによるdos攻撃">
  GraphQLによるDoS攻撃
  &lt;a class="anchor" href="#graphql%e3%81%ab%e3%82%88%e3%82%8bdos%e6%94%bb%e6%92%83">#&lt;/a>
 &lt;/h1>
@@ -107,7 +107,7 @@ GraphQLの多くの実装では、デフォルトでIntrospectionが有効にな
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>			&lt;span style="color:#66d9ef">...&lt;/span>memberFragment
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>実際に報告された事例は少ないですが、再帰的な解決を引き起こすクエリは潜在的に脆弱になりうる要素の1つとして指摘されています。&lt;/p></description></item><item><title>レースコンディション</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/specific/race_condition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/specific/race_condition/</guid><description>&lt;h1 id="レースコンディション">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>実際に報告された事例は少ないですが、再帰的な解決を引き起こすクエリは潜在的に脆弱になりうる要素の1つとして指摘されています。&lt;/p></description></item><item><title>レースコンディション</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/race_condition/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/specific/race_condition/</guid><description>&lt;h1 id="レースコンディション">
  レースコンディション
  &lt;a class="anchor" href="#%e3%83%ac%e3%83%bc%e3%82%b9%e3%82%b3%e3%83%b3%e3%83%87%e3%82%a3%e3%82%b7%e3%83%a7%e3%83%b3">#&lt;/a>
 &lt;/h1>

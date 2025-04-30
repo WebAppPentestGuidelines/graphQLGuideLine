@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GraphQL特有でない問題 on GraphQL診断ガイドライン</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/common/</link><description>Recent content in GraphQL特有でない問題 on GraphQL診断ガイドライン</description><generator>Hugo</generator><language>ja</language><atom:link href="https://wg1.isog-j.org/graphQLGuideline/docs/common/index.xml" rel="self" type="application/rss+xml"/><item><title>インジェクション系の脆弱性について</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/common/injection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/common/injection/</guid><description>&lt;h1 id="インジェクション系の脆弱性について">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GraphQL特有でない問題 on GraphQL診断ガイドライン</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/</link><description>Recent content in GraphQL特有でない問題 on GraphQL診断ガイドライン</description><generator>Hugo</generator><language>ja</language><atom:link href="https://wg1.isog-j.org/graphQLGuideLine/docs/common/index.xml" rel="self" type="application/rss+xml"/><item><title>インジェクション系の脆弱性について</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/injection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/injection/</guid><description>&lt;h1 id="インジェクション系の脆弱性について">
  インジェクション系の脆弱性について
  &lt;a class="anchor" href="#%e3%82%a4%e3%83%b3%e3%82%b8%e3%82%a7%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3%e7%b3%bb%e3%81%ae%e8%84%86%e5%bc%b1%e6%80%a7%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6">#&lt;/a>
 &lt;/h1>
@@ -54,7 +54,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		content
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>実際に発行されるSQLクエリは、開発者が意図していたものとは異なるものになることがわかります。具体的には、&lt;code>SELECT * FROM users WHERE id = 1 UNION SELECT * FROM users&lt;/code>というSQLクエリが発行されます。&lt;/p></description></item><item><title>不適切なアクセス制御</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/common/access_control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/common/access_control/</guid><description>&lt;h1 id="不適切なアクセス制御">
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>実際に発行されるSQLクエリは、開発者が意図していたものとは異なるものになることがわかります。具体的には、&lt;code>SELECT * FROM users WHERE id = 1 UNION SELECT * FROM users&lt;/code>というSQLクエリが発行されます。&lt;/p></description></item><item><title>不適切なアクセス制御</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/access_control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/access_control/</guid><description>&lt;h1 id="不適切なアクセス制御">
  不適切なアクセス制御
  &lt;a class="anchor" href="#%e4%b8%8d%e9%81%a9%e5%88%87%e3%81%aa%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e5%88%b6%e5%be%a1">#&lt;/a>
 &lt;/h1>
@@ -84,7 +84,7 @@
  対策
  &lt;a class="anchor" href="#%e5%af%be%e7%ad%96">#&lt;/a>
 &lt;/h2>
-&lt;p>RBAC(&lt;strong>R&lt;/strong>ole &lt;strong>B&lt;/strong>ased &lt;strong>A&lt;/strong>ccess &lt;strong>C&lt;/strong>ontrol)やほかのアクセス制御のしくみを用いて、リソースにCRUDを実行しようとしているユーザーが、適切な権限を有しているかを必ず検証してください。もし、その操作が正規のユーザーによるものであることを確認できない場合、そのリクエストを拒否するようにしてください。&lt;/p></description></item><item><title>危険なデフォルト設定の使用</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/common/default_setting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/common/default_setting/</guid><description>&lt;h1 id="危険なデフォルト設定の使用">
+&lt;p>RBAC(&lt;strong>R&lt;/strong>ole &lt;strong>B&lt;/strong>ased &lt;strong>A&lt;/strong>ccess &lt;strong>C&lt;/strong>ontrol)やほかのアクセス制御のしくみを用いて、リソースにCRUDを実行しようとしているユーザーが、適切な権限を有しているかを必ず検証してください。もし、その操作が正規のユーザーによるものであることを確認できない場合、そのリクエストを拒否するようにしてください。&lt;/p></description></item><item><title>危険なデフォルト設定の使用</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/default_setting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/default_setting/</guid><description>&lt;h1 id="危険なデフォルト設定の使用">
  危険なデフォルト設定の使用
  &lt;a class="anchor" href="#%e5%8d%b1%e9%99%ba%e3%81%aa%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bd%bf%e7%94%a8">#&lt;/a>
 &lt;/h1>
@@ -132,7 +132,7 @@
 また、エラーメッセージは極力画面上には出力せず、ファイルやデータベース等に書き出してください。&lt;/p>
 &lt;p>EndPoint URLはユーザーにアクセスされるため、一般的にはユーザーに向けて開示されている情報です。しかしながら、ユーザーに広く開示していない場合は単純な機械的アクセスによってEndPointを探索されることを避けるため、変更することを推奨します。&lt;/p>
 &lt;p>これらの設定が適切に行えないライブラリを利用する場合は、直接ユーザーがGraphQLサーバに対してアクセスできないように制限してください。対策の例として、ユーザーからの入力情報に応じてGraphQL EndPointに中継するサーバサイドのプログラムで、ユーザーのアクセス制御を行うことが挙げられます。&lt;br>
-なお、必要な設定はライブラリによって異なるため、使用しているライブラリのドキュメントに従って本番環境向けの設定にする必要があります。&lt;/p></description></item><item><title>クロスサイトリクエストフォージェリ</title><link>https://wg1.isog-j.org/graphQLGuideline/docs/common/cross_site_request_forgeries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideline/docs/common/cross_site_request_forgeries/</guid><description>&lt;h1 id="クロスサイトリクエストフォージェリ">
+なお、必要な設定はライブラリによって異なるため、使用しているライブラリのドキュメントに従って本番環境向けの設定にする必要があります。&lt;/p></description></item><item><title>クロスサイトリクエストフォージェリ</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/cross_site_request_forgeries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/cross_site_request_forgeries/</guid><description>&lt;h1 id="クロスサイトリクエストフォージェリ">
  クロスサイトリクエストフォージェリ
  &lt;a class="anchor" href="#%e3%82%af%e3%83%ad%e3%82%b9%e3%82%b5%e3%82%a4%e3%83%88%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%aa">#&lt;/a>
 &lt;/h1>

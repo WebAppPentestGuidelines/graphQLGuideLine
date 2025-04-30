@@ -8,13 +8,13 @@ bookToc: false
 
 # GraphQLの概要
 
-# GraphQLとは
+## GraphQLとは
 
 GraphQLとはFacebookによって開発されたWeb APIの規格です。
 
 RESTful APIにおける課題を解決する技術として注目されており、海外ではGitHub,Twitter等すでに多くのサービスで採用され、近年では国内でも採用するサービスが増えてきました。
 
-# GraphQLの例
+## GraphQLの例
 
 GraphQLはSQLのようなデータを問い合わせるための言語であり、以下2つの言語が存在します。
 

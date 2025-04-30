@@ -13,7 +13,7 @@ bookToc: false
 
 <center>
 {{< figure
-	src="figure2.png"
+	src="../figure2.png"
 	alt="図2"
 	caption="図2"
 	width="60%"

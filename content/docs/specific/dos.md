@@ -114,7 +114,7 @@ query{
 
 <center>
 {{< figure
-	src="figure1.png"
+	src="../figure1.png"
 	alt="図1"
 	caption="図1"
 	width="60%"

@@ -1,4 +1,4 @@
-baseURL = 'https://wg1.isog-j.org/graphQLGuideline/'
+baseURL = 'https://wg1.isog-j.org/graphQLGuideLine/'
 defaultContentLanguage = 'ja'
 languageCode = 'ja'
 title = 'GraphQL診断ガイドライン'

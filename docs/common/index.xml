@@ -1,172 +1,172 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GraphQL特有でない問題 on GraphQL診断ガイドライン</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/</link><description>Recent content in GraphQL特有でない問題 on GraphQL診断ガイドライン</description><generator>Hugo</generator><language>ja</language><atom:link href="https://wg1.isog-j.org/graphQLGuideLine/docs/common/index.xml" rel="self" type="application/rss+xml"/><item><title>インジェクション系の脆弱性について</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/injection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/injection/</guid><description>&lt;h1 id="インジェクション系の脆弱性について">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GraphQL特有でない問題 on GraphQL診断ガイドライン</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/</link><description>Recent content in GraphQL特有でない問題 on GraphQL診断ガイドライン</description><generator>Hugo</generator><language>ja</language><atom:link href="https://wg1.isog-j.org/graphQLGuideLine/docs/common/index.xml" rel="self" type="application/rss+xml"/><item><title>インジェクション系の脆弱性について</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/injection/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/injection/</guid><description>&lt;h1 id="インジェクション系の脆弱性について"&gt;
  インジェクション系の脆弱性について
- &lt;a class="anchor" href="#%e3%82%a4%e3%83%b3%e3%82%b8%e3%82%a7%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3%e7%b3%bb%e3%81%ae%e8%84%86%e5%bc%b1%e6%80%a7%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="概要">
+ &lt;a class="anchor" href="#%e3%82%a4%e3%83%b3%e3%82%b8%e3%82%a7%e3%82%af%e3%82%b7%e3%83%a7%e3%83%b3%e7%b3%bb%e3%81%ae%e8%84%86%e5%bc%b1%e6%80%a7%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="概要"&gt;
  概要
- &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81">#&lt;/a>
-&lt;/h2>
-&lt;p>GraphQLサーバで、受け取ったデータを適切にエスケープまたはエンコードせずに、ほかの処理系に渡した場合、インジェクション攻撃が成立し得ます。&lt;/p>
-&lt;h2 id="影響">
+ &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;GraphQLサーバで、受け取ったデータを適切にエスケープまたはエンコードせずに、ほかの処理系に渡した場合、インジェクション攻撃が成立し得ます。&lt;/p&gt;
+&lt;h2 id="影響"&gt;
  影響
- &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf">#&lt;/a>
-&lt;/h2>
-&lt;p>インジェクションを受けた処理系に応じてさまざまな影響を受けます。&lt;/p>
-&lt;p>GraphQLで受け取った入力を渡す先の処理系には、たとえば下記のようなものが想定されます。&lt;/p>
-&lt;ul>
-&lt;li>OS&lt;/li>
-&lt;li>DBMS(SQL/NoSQL)&lt;/li>
-&lt;li>XMLパーサ&lt;/li>
-&lt;/ul>
-&lt;p>このような処理系に信頼できない入力を渡した場合、下記のような攻撃が成立し得ます。&lt;/p>
-&lt;!-- textlint-disable prh -->
-&lt;ul>
-&lt;li>OSコマンドインジェクション&lt;/li>
-&lt;li>SQL/NoSQLインジェクション&lt;/li>
-&lt;li>XXE(&lt;strong>X&lt;/strong>ML E&lt;strong>x&lt;/strong>ternal &lt;strong>E&lt;/strong>ntity)&lt;/li>
-&lt;/ul>
-&lt;!-- textlint-enable prh -->
-&lt;p>他にも、さまざまなインジェクション系の脆弱性につながる可能性があります。例で挙げたような処理系以外でも、GraphQLサーバが受け取った入力を渡す場合は、適切にその入力値を処理する必要があります。&lt;/p>
-&lt;h2 id="検証方法">
+ &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;インジェクションを受けた処理系に応じてさまざまな影響を受けます。&lt;/p&gt;
+&lt;p&gt;GraphQLで受け取った入力を渡す先の処理系には、たとえば下記のようなものが想定されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OS&lt;/li&gt;
+&lt;li&gt;DBMS(SQL/NoSQL)&lt;/li&gt;
+&lt;li&gt;XMLパーサ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;このような処理系に信頼できない入力を渡した場合、下記のような攻撃が成立し得ます。&lt;/p&gt;
+&lt;!-- textlint-disable prh --&gt;
+&lt;ul&gt;
+&lt;li&gt;OSコマンドインジェクション&lt;/li&gt;
+&lt;li&gt;SQL/NoSQLインジェクション&lt;/li&gt;
+&lt;li&gt;XXE(&lt;strong&gt;X&lt;/strong&gt;ML E&lt;strong&gt;x&lt;/strong&gt;ternal &lt;strong&gt;E&lt;/strong&gt;ntity)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- textlint-enable prh --&gt;
+&lt;p&gt;他にも、さまざまなインジェクション系の脆弱性につながる可能性があります。例で挙げたような処理系以外でも、GraphQLサーバが受け取った入力を渡す場合は、適切にその入力値を処理する必要があります。&lt;/p&gt;
+&lt;h2 id="検証方法"&gt;
  検証方法
- &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95">#&lt;/a>
-&lt;/h2>
-&lt;p>実際に、例を見てGraphQLを利用したアプリケーションでSQLインジェクションが成立することを確認しましょう。下記のようなGraphQLのスキーマを想像してください。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-graphql" data-lang="graphql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Article&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	id: &lt;span style="color:#a6e22e">ID&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	title: &lt;span style="color:#a6e22e">String&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	content: &lt;span style="color:#a6e22e">String&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">type&lt;/span> &lt;span style="color:#a6e22e">Query&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e"># 記事の情報を取得する&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	getArticle(id: &lt;span style="color:#a6e22e">ID&lt;/span>): &lt;span style="color:#a6e22e">Article&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>スキーマで定義されたクエリ&lt;code>getArticle&lt;/code>のリゾルバは下記のように実装されているとします。(サンプルコードは擬似コードです。)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">getArticleResolver&lt;/span>(&lt;span style="color:#a6e22e">id&lt;/span>: &lt;span style="color:#66d9ef">string&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">query&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;SELECT * FROM users WHERE id = &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">id&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>このとき、ユーザーが下記のようなGraphQLクエリを投げた場合のSQLクエリを考えてみてください。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-graphql" data-lang="graphql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">query&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">getArticle&lt;/span>(id: &lt;span style="color:#e6db74">&amp;#34;1 UNION SELECT * FROM users&amp;#34;&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">id&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		title
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		content
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>実際に発行されるSQLクエリは、開発者が意図していたものとは異なるものになることがわかります。具体的には、&lt;code>SELECT * FROM users WHERE id = 1 UNION SELECT * FROM users&lt;/code>というSQLクエリが発行されます。&lt;/p></description></item><item><title>不適切なアクセス制御</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/access_control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/access_control/</guid><description>&lt;h1 id="不適切なアクセス制御">
+ &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;実際に、例を見てGraphQLを利用したアプリケーションでSQLインジェクションが成立することを確認しましょう。下記のようなGraphQLのスキーマを想像してください。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-graphql" data-lang="graphql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;type&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Article&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	id: &lt;span style="color:#a6e22e"&gt;ID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	title: &lt;span style="color:#a6e22e"&gt;String&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	content: &lt;span style="color:#a6e22e"&gt;String&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;type&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Query&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	&lt;span style="color:#75715e"&gt;# 記事の情報を取得する&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	getArticle(id: &lt;span style="color:#a6e22e"&gt;ID&lt;/span&gt;): &lt;span style="color:#a6e22e"&gt;Article&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;スキーマで定義されたクエリ&lt;code&gt;getArticle&lt;/code&gt;のリゾルバは下記のように実装されているとします。(サンプルコードは擬似コードです。)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;func&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;getArticleResolver&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;: &lt;span style="color:#66d9ef"&gt;string&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	&lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;query&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;SELECT * FROM users WHERE id = &amp;#34;&lt;/span&gt; &lt;span style="color:#f92672"&gt;+&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このとき、ユーザーが下記のようなGraphQLクエリを投げた場合のSQLクエリを考えてみてください。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-graphql" data-lang="graphql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;query&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	&lt;span style="color:#a6e22e"&gt;getArticle&lt;/span&gt;(id: &lt;span style="color:#e6db74"&gt;&amp;#34;1 UNION SELECT * FROM users&amp;#34;&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;		&lt;span style="color:#a6e22e"&gt;id&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;		title
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;		content
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;実際に発行されるSQLクエリは、開発者が意図していたものとは異なるものになることがわかります。具体的には、&lt;code&gt;SELECT * FROM users WHERE id = 1 UNION SELECT * FROM users&lt;/code&gt;というSQLクエリが発行されます。&lt;/p&gt;</description></item><item><title>不適切なアクセス制御</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/access_control/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/access_control/</guid><description>&lt;h1 id="不適切なアクセス制御"&gt;
  不適切なアクセス制御
- &lt;a class="anchor" href="#%e4%b8%8d%e9%81%a9%e5%88%87%e3%81%aa%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e5%88%b6%e5%be%a1">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="概要">
+ &lt;a class="anchor" href="#%e4%b8%8d%e9%81%a9%e5%88%87%e3%81%aa%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e5%88%b6%e5%be%a1"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="概要"&gt;
  概要
- &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81">#&lt;/a>
-&lt;/h2>
-&lt;p>GraphQL APIにおいても、ほかのシステムと同様に、アクセス制御を適切に実施する必要があります。&lt;/p>
-&lt;h2 id="影響">
+ &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;GraphQL APIにおいても、ほかのシステムと同様に、アクセス制御を適切に実施する必要があります。&lt;/p&gt;
+&lt;h2 id="影響"&gt;
  影響
- &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf">#&lt;/a>
-&lt;/h2>
-&lt;!-- textlint-disable prh -->
-&lt;p>GraphQL APIのアクセス制御が適切に実施されていない場合、APIで操作できるさまざまなリソース(例：ユーザー情報やライセンスキー等)が、不正に作成、取得、更新、削除される可能性があります。&lt;/p>
-&lt;!-- textlint-enable prh -->
-&lt;p>昨今では、国内のサービスでもGraphQL APIにおけるアクセス制御の不備が発見され報告されています。詳しくは、下記のページをご覧ください。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://zenn.dev/mipsparc/articles/a818970a19ade6">GraphQL採用サービスで任意カラムを取得できる脆弱性を見つけた話&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://gist.github.com/mala/8f264786026d105c7144dcbed8240bc9">GraphQL採用サービスに追加で脆弱性を報告した話&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="検証方法">
+ &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;!-- textlint-disable prh --&gt;
+&lt;p&gt;GraphQL APIのアクセス制御が適切に実施されていない場合、APIで操作できるさまざまなリソース(例：ユーザー情報やライセンスキー等)が、不正に作成、取得、更新、削除される可能性があります。&lt;/p&gt;
+&lt;!-- textlint-enable prh --&gt;
+&lt;p&gt;昨今では、国内のサービスでもGraphQL APIにおけるアクセス制御の不備が発見され報告されています。詳しくは、下記のページをご覧ください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://zenn.dev/mipsparc/articles/a818970a19ade6"&gt;GraphQL採用サービスで任意カラムを取得できる脆弱性を見つけた話&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://gist.github.com/mala/8f264786026d105c7144dcbed8240bc9"&gt;GraphQL採用サービスに追加で脆弱性を報告した話&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="検証方法"&gt;
  検証方法
- &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95">#&lt;/a>
-&lt;/h2>
-&lt;p>対象のリソースに対するアクセス権を持たない認証状態で、クエリやミューテーションを通じて、リソースのCRUD操作を試みてください。たとえば、ユーザーIDやライセンスキーのようなアクセス識別子を送っている場合は、値の追加や変更等の検証する方法があります。操作が成功した場合、適切なアクセス制御が実施されていない事がわかります。&lt;/p>
-&lt;h2 id="対策">
+ &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;対象のリソースに対するアクセス権を持たない認証状態で、クエリやミューテーションを通じて、リソースのCRUD操作を試みてください。たとえば、ユーザーIDやライセンスキーのようなアクセス識別子を送っている場合は、値の追加や変更等の検証する方法があります。操作が成功した場合、適切なアクセス制御が実施されていない事がわかります。&lt;/p&gt;
+&lt;h2 id="対策"&gt;
  対策
- &lt;a class="anchor" href="#%e5%af%be%e7%ad%96">#&lt;/a>
-&lt;/h2>
-&lt;p>RBAC(&lt;strong>R&lt;/strong>ole &lt;strong>B&lt;/strong>ased &lt;strong>A&lt;/strong>ccess &lt;strong>C&lt;/strong>ontrol)やほかのアクセス制御のしくみを用いて、リソースにCRUDを実行しようとしているユーザーが、適切な権限を有しているかを必ず検証してください。もし、その操作が正規のユーザーによるものであることを確認できない場合、そのリクエストを拒否するようにしてください。&lt;/p></description></item><item><title>危険なデフォルト設定の使用</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/default_setting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/default_setting/</guid><description>&lt;h1 id="危険なデフォルト設定の使用">
+ &lt;a class="anchor" href="#%e5%af%be%e7%ad%96"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;RBAC(&lt;strong&gt;R&lt;/strong&gt;ole &lt;strong&gt;B&lt;/strong&gt;ased &lt;strong&gt;A&lt;/strong&gt;ccess &lt;strong&gt;C&lt;/strong&gt;ontrol)やほかのアクセス制御のしくみを用いて、リソースにCRUDを実行しようとしているユーザーが、適切な権限を有しているかを必ず検証してください。もし、その操作が正規のユーザーによるものであることを確認できない場合、そのリクエストを拒否するようにしてください。&lt;/p&gt;</description></item><item><title>危険なデフォルト設定の使用</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/default_setting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/default_setting/</guid><description>&lt;h1 id="危険なデフォルト設定の使用"&gt;
  危険なデフォルト設定の使用
- &lt;a class="anchor" href="#%e5%8d%b1%e9%99%ba%e3%81%aa%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bd%bf%e7%94%a8">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="概要">
+ &lt;a class="anchor" href="#%e5%8d%b1%e9%99%ba%e3%81%aa%e3%83%87%e3%83%95%e3%82%a9%e3%83%ab%e3%83%88%e8%a8%ad%e5%ae%9a%e3%81%ae%e4%bd%bf%e7%94%a8"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="概要"&gt;
  概要
- &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81">#&lt;/a>
-&lt;/h2>
-&lt;p>GraphQLライブラリには、デフォルトで開発者向け機能が有効になっている場合があります。&lt;br>
-前述のIntrospection機能が代表例ですが、ほかにもエラーメッセージ中に不必要な情報が出力されることもあります。&lt;br>
-具体的には、Introspection機能がOffであってもSchemaを推測されたり、特定のURLで情報を受け取るがためにEndPointを推測されやすいといった問題が挙げられます。&lt;/p>
-&lt;h2 id="影響">
+ &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;GraphQLライブラリには、デフォルトで開発者向け機能が有効になっている場合があります。&lt;br&gt;
+前述のIntrospection機能が代表例ですが、ほかにもエラーメッセージ中に不必要な情報が出力されることもあります。&lt;br&gt;
+具体的には、Introspection機能がOffであってもSchemaを推測されたり、特定のURLで情報を受け取るがためにEndPointを推測されやすいといった問題が挙げられます。&lt;/p&gt;
+&lt;h2 id="影響"&gt;
  影響
- &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf">#&lt;/a>
-&lt;/h2>
-&lt;p>攻撃者にとって有用なシステムに関する情報を取得される恐れがあります。&lt;br>
-ただちに攻撃にはつながらないものの、ほかの攻撃の起点となる恐れがあります。&lt;/p>
-&lt;h2 id="検証方法">
+ &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;攻撃者にとって有用なシステムに関する情報を取得される恐れがあります。&lt;br&gt;
+ただちに攻撃にはつながらないものの、ほかの攻撃の起点となる恐れがあります。&lt;/p&gt;
+&lt;h2 id="検証方法"&gt;
  検証方法
- &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95">#&lt;/a>
-&lt;/h2>
-&lt;p>以下のように存在しないクエリを送信した際に、レスポンスエラー中に存在するクエリの情報が出力された場合は、対策が必要です。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-graphql" data-lang="graphql">&lt;span style="display:flex;">&lt;span>{&lt;span style="color:#e6db74">&amp;#34;query&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;query\n{\nsysytem\n}&amp;#34;&lt;/span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;errors&amp;#34;&lt;/span>: [
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;message&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Cannot query field \&amp;#34;system\&amp;#34; on type \&amp;#34;Query\&amp;#34;. Did you mean \&amp;#34;pastes\&amp;#34;, \&amp;#34;paste\&amp;#34;, \&amp;#34;systemUpdate\&amp;#34; or \&amp;#34;systemHealth\&amp;#34;?&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;locations&amp;#34;&lt;/span>: [
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;line&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;column&amp;#34;&lt;/span>: &lt;span style="color:#ae81ff">2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>エラーメッセージの出力に起因する問題は、GraphQLのエラーだけではなく、データベースで生じたエラーの情報等も含まれます。
-そのため、バックエンドのシステム全体についてエラーメッセージから有用な情報が得られないか検証する必要があります。このような検証には、ファジングやツールによるスキャンが有用です。&lt;/p>
-&lt;p>また、直接コードを閲覧できる場合は、GraphQLライブラリの設定や受け渡している引数が公式ドキュメントやWebページ等で推奨されている方式であるか確認することも有力な検証方法の1つです。&lt;/p>
-&lt;h2 id="対策">
+ &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;以下のように存在しないクエリを送信した際に、レスポンスエラー中に存在するクエリの情報が出力された場合は、対策が必要です。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-graphql" data-lang="graphql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{&lt;span style="color:#e6db74"&gt;&amp;#34;query&amp;#34;&lt;/span&gt;:&lt;span style="color:#e6db74"&gt;&amp;#34;query\n{\nsysytem\n}&amp;#34;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-json" data-lang="json"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;errors&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;message&amp;#34;&lt;/span&gt;: &lt;span style="color:#e6db74"&gt;&amp;#34;Cannot query field \&amp;#34;system\&amp;#34; on type \&amp;#34;Query\&amp;#34;. Did you mean \&amp;#34;pastes\&amp;#34;, \&amp;#34;paste\&amp;#34;, \&amp;#34;systemUpdate\&amp;#34; or \&amp;#34;systemHealth\&amp;#34;?&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;locations&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;line&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f92672"&gt;&amp;#34;column&amp;#34;&lt;/span&gt;: &lt;span style="color:#ae81ff"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;エラーメッセージの出力に起因する問題は、GraphQLのエラーだけではなく、データベースで生じたエラーの情報等も含まれます。
+そのため、バックエンドのシステム全体についてエラーメッセージから有用な情報が得られないか検証する必要があります。このような検証には、ファジングやツールによるスキャンが有用です。&lt;/p&gt;
+&lt;p&gt;また、直接コードを閲覧できる場合は、GraphQLライブラリの設定や受け渡している引数が公式ドキュメントやWebページ等で推奨されている方式であるか確認することも有力な検証方法の1つです。&lt;/p&gt;
+&lt;h2 id="対策"&gt;
  対策
- &lt;a class="anchor" href="#%e5%af%be%e7%ad%96">#&lt;/a>
-&lt;/h2>
-&lt;p>本番環境ではデバッグモードを有効にしないでください。&lt;br>
-また、エラーメッセージは極力画面上には出力せず、ファイルやデータベース等に書き出してください。&lt;/p>
-&lt;p>EndPoint URLはユーザーにアクセスされるため、一般的にはユーザーに向けて開示されている情報です。しかしながら、ユーザーに広く開示していない場合は単純な機械的アクセスによってEndPointを探索されることを避けるため、変更することを推奨します。&lt;/p>
-&lt;p>これらの設定が適切に行えないライブラリを利用する場合は、直接ユーザーがGraphQLサーバに対してアクセスできないように制限してください。対策の例として、ユーザーからの入力情報に応じてGraphQL EndPointに中継するサーバサイドのプログラムで、ユーザーのアクセス制御を行うことが挙げられます。&lt;br>
-なお、必要な設定はライブラリによって異なるため、使用しているライブラリのドキュメントに従って本番環境向けの設定にする必要があります。&lt;/p></description></item><item><title>クロスサイトリクエストフォージェリ</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/cross_site_request_forgeries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/cross_site_request_forgeries/</guid><description>&lt;h1 id="クロスサイトリクエストフォージェリ">
+ &lt;a class="anchor" href="#%e5%af%be%e7%ad%96"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;本番環境ではデバッグモードを有効にしないでください。&lt;br&gt;
+また、エラーメッセージは極力画面上には出力せず、ファイルやデータベース等に書き出してください。&lt;/p&gt;
+&lt;p&gt;EndPoint URLはユーザーにアクセスされるため、一般的にはユーザーに向けて開示されている情報です。しかしながら、ユーザーに広く開示していない場合は単純な機械的アクセスによってEndPointを探索されることを避けるため、変更することを推奨します。&lt;/p&gt;
+&lt;p&gt;これらの設定が適切に行えないライブラリを利用する場合は、直接ユーザーがGraphQLサーバに対してアクセスできないように制限してください。対策の例として、ユーザーからの入力情報に応じてGraphQL EndPointに中継するサーバサイドのプログラムで、ユーザーのアクセス制御を行うことが挙げられます。&lt;br&gt;
+なお、必要な設定はライブラリによって異なるため、使用しているライブラリのドキュメントに従って本番環境向けの設定にする必要があります。&lt;/p&gt;</description></item><item><title>クロスサイトリクエストフォージェリ</title><link>https://wg1.isog-j.org/graphQLGuideLine/docs/common/cross_site_request_forgeries/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wg1.isog-j.org/graphQLGuideLine/docs/common/cross_site_request_forgeries/</guid><description>&lt;h1 id="クロスサイトリクエストフォージェリ"&gt;
  クロスサイトリクエストフォージェリ
- &lt;a class="anchor" href="#%e3%82%af%e3%83%ad%e3%82%b9%e3%82%b5%e3%82%a4%e3%83%88%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%aa">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="概要">
+ &lt;a class="anchor" href="#%e3%82%af%e3%83%ad%e3%82%b9%e3%82%b5%e3%82%a4%e3%83%88%e3%83%aa%e3%82%af%e3%82%a8%e3%82%b9%e3%83%88%e3%83%95%e3%82%a9%e3%83%bc%e3%82%b8%e3%82%a7%e3%83%aa"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="概要"&gt;
  概要
- &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81">#&lt;/a>
-&lt;/h2>
-&lt;p>GraphQLサーバの実装不備によってクライアントから送信されるリクエストが十分検証できていない場合、クロスサイトリクエストフォージェリ(CSRF)攻撃に対して脆弱になる可能性があります。&lt;/p>
-&lt;h2 id="影響">
+ &lt;a class="anchor" href="#%e6%a6%82%e8%a6%81"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;GraphQLサーバの実装不備によってクライアントから送信されるリクエストが十分検証できていない場合、クロスサイトリクエストフォージェリ(CSRF)攻撃に対して脆弱になる可能性があります。&lt;/p&gt;
+&lt;h2 id="影響"&gt;
  影響
- &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf">#&lt;/a>
-&lt;/h2>
-&lt;p>CSRFが悪用された場合と同様の影響を受けます。GraphQL スキーマで定義されているMutationのような副作用のある処理では、攻撃者によって設置された罠ページを経由することにより被害者の意図しない処理を実行させられます。お問い合わせ機能や、チャットへの投稿、商品購入のような金銭授受に関わる処理など、影響については悪用される機能によって異なります。&lt;/p>
-&lt;h2 id="検証方法">
+ &lt;a class="anchor" href="#%e5%bd%b1%e9%9f%bf"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;CSRFが悪用された場合と同様の影響を受けます。GraphQL スキーマで定義されているMutationのような副作用のある処理では、攻撃者によって設置された罠ページを経由することにより被害者の意図しない処理を実行させられます。お問い合わせ機能や、チャットへの投稿、商品購入のような金銭授受に関わる処理など、影響については悪用される機能によって異なります。&lt;/p&gt;
+&lt;h2 id="検証方法"&gt;
  検証方法
- &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95">#&lt;/a>
-&lt;/h2>
-&lt;p>CSRFの検証方法は一般のWebアプリケーションのテスト方法と同様です。
-検査対象のアプリケーションとは異なるオリジンの罠ページを用意し、被害者ユーザーの意図にかかわらずリクエストを送信できるかを検証します。&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery">Testing for Cross Site Request Forgery&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://blog.doyensec.com/2021/05/20/graphql-csrf.html">That single GraphQL issue that you keep missing&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>通常、GraphQLのクエリを送信するリクエストのContent-Typeは「application/json」で定義されます。
+ &lt;a class="anchor" href="#%e6%a4%9c%e8%a8%bc%e6%96%b9%e6%b3%95"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;CSRFの検証方法は一般のWebアプリケーションのテスト方法と同様です。
+検査対象のアプリケーションとは異なるオリジンの罠ページを用意し、被害者ユーザーの意図にかかわらずリクエストを送信できるかを検証します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery"&gt;Testing for Cross Site Request Forgery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.doyensec.com/2021/05/20/graphql-csrf.html"&gt;That single GraphQL issue that you keep missing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通常、GraphQLのクエリを送信するリクエストのContent-Typeは「application/json」で定義されます。
 サーバの実装不備などによってContent-Typeが正しく検証されず、「application/json」以外も受け入れてしまう挙動の場合、CSRFに対して脆弱になる可能性があります。
-一例として、以下のような罠を含んだページを閲覧することでリクエストが送信され、サーバ側で受け入れられるかを検証します。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">body&lt;/span> &lt;span style="color:#a6e22e">onload&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;document.forms[0].submit()&amp;#34;&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">form&lt;/span> &lt;span style="color:#a6e22e">action&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://[TARGET_DOMAIN]/graphql&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">method&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;POST&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">enctype&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;text/plain&amp;#34;&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">textarea&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;amp;#x71;&amp;amp;#x75;&amp;amp;#x65;&amp;amp;#x72;&amp;amp;#x79;&amp;amp;#x7b;&amp;amp;#x41;&amp;amp;#x6c;&amp;amp;#x6c;&amp;amp;#x42;&amp;amp;#x6f;&amp;amp;#x6f;&amp;amp;#x6b;&amp;amp;#x73;&amp;amp;#x7b;&amp;amp;#x42;&amp;amp;#x6f;&amp;amp;#x6f;&amp;amp;#x6b;&amp;amp;#x73;&amp;amp;#x20;&amp;amp;#x7b;&amp;amp;#x69;&amp;amp;#x64;&amp;amp;#x2c;&amp;amp;#x74;&amp;amp;#x69;&amp;amp;#x74;&amp;amp;#x6c;&amp;amp;#x65;&amp;amp;#x2c;&amp;amp;#x61;&amp;amp;#x75;&amp;amp;#x74;&amp;amp;#x68;&amp;amp;#x6f;&amp;amp;#x72;&amp;amp;#x2c;&amp;amp;#x23;&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">type&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hidden&amp;#34;&lt;/span>&amp;gt;x
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}}}&amp;lt;/&lt;span style="color:#f92672">textarea&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#f92672">form&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>この罠サイトは以下のようなリクエストを送信します。&lt;/p>
-&lt;pre tabindex="0">&lt;code>POST /graphql HTTP/1.1
+一例として、以下のような罠を含んだページを閲覧することでリクエストが送信され、サーバ側で受け入れられるかを検証します。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-html" data-lang="html"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;&lt;span style="color:#f92672"&gt;body&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;onload&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;document.forms[0].submit()&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;form&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;action&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;https://[TARGET_DOMAIN]/graphql&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;method&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;POST&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;enctype&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;text/plain&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;&lt;span style="color:#f92672"&gt;textarea&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;name&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&amp;amp;#x71;&amp;amp;#x75;&amp;amp;#x65;&amp;amp;#x72;&amp;amp;#x79;&amp;amp;#x7b;&amp;amp;#x41;&amp;amp;#x6c;&amp;amp;#x6c;&amp;amp;#x42;&amp;amp;#x6f;&amp;amp;#x6f;&amp;amp;#x6b;&amp;amp;#x73;&amp;amp;#x7b;&amp;amp;#x42;&amp;amp;#x6f;&amp;amp;#x6f;&amp;amp;#x6b;&amp;amp;#x73;&amp;amp;#x20;&amp;amp;#x7b;&amp;amp;#x69;&amp;amp;#x64;&amp;amp;#x2c;&amp;amp;#x74;&amp;amp;#x69;&amp;amp;#x74;&amp;amp;#x6c;&amp;amp;#x65;&amp;amp;#x2c;&amp;amp;#x61;&amp;amp;#x75;&amp;amp;#x74;&amp;amp;#x68;&amp;amp;#x6f;&amp;amp;#x72;&amp;amp;#x2c;&amp;amp;#x23;&amp;#34;&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;type&lt;/span&gt;&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;hidden&amp;#34;&lt;/span&gt;&amp;gt;x
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}}}&amp;lt;/&lt;span style="color:#f92672"&gt;textarea&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/&lt;span style="color:#f92672"&gt;form&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;lt;/&lt;span style="color:#f92672"&gt;body&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;この罠サイトは以下のようなリクエストを送信します。&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;POST /graphql HTTP/1.1
 Host: [TARGET_DOMAIN]
 Content-Length: 48
 Origin: http://[ATTACKER_DOMAIN]
@@ -180,11 +180,11 @@ Connection: close
 
 query{AllBooks{Books {id,title,author,#=x
 }}}
-&lt;/code>&lt;/pre>&lt;h2 id="対策">
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="対策"&gt;
  対策
- &lt;a class="anchor" href="#%e5%af%be%e7%ad%96">#&lt;/a>
-&lt;/h2>
-&lt;p>対策についても一般のWebアプリケーションの対策方法と同様です。
+ &lt;a class="anchor" href="#%e5%af%be%e7%ad%96"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;対策についても一般のWebアプリケーションの対策方法と同様です。
 CSRFトークンやCookieの二重送信などが基本的な対策方法として挙げられますが、先も述べたように、通常GraphQLリクエストのContent-Typeは「application/json」で定義されます。
 そのため、GraphQLのようなアプリケーションはAJAXを用いたクライアントアプリケーションとの結び付きが強く、カスタムリクエストヘッダを用いた対策がしばしば提案されます。
-カスタムヘッダを設定したリクエストは同一生成元ポリシーによる制限を受けるため、CSRFの対策に有効です。&lt;/p></description></item></channel></rss>
+カスタムヘッダを設定したリクエストは同一生成元ポリシーによる制限を受けるため、CSRFの対策に有効です。&lt;/p&gt;</description></item></channel></rss>

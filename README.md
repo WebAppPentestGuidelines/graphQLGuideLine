@@ -1,4 +1,4 @@
-# GraphQL診断ガイドライン目次
+# GraphQL診断ガイドライン
 構築済みのドキュメントはこちら：https://wg1.isog-j.org/graphQLGuideLine/
 
 ## 本ドキュメントの目的
